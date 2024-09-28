@@ -30,7 +30,7 @@ export default function Giris({ searchParams }){
                         <p style={{marginTop:"30px",  fontWeight:"300", fontSize:"13px" }}>VEYA</p>
                         <button className="google-button">Google ile giriş yap</button><br />
                         <button className="apple-button">Apple ile giriş yap</button>
-                        <p style={{fontSize:"10px", textAlign:"left", marginTop:"10px"}}>Google veya Apple kimliğinizle bir sonraki adıma geçmeniz halinde Bireysel <br /> Hesap Sözleşmesi ve Ekleri'ni kabul etmiş sayılırsınız.</p>
+                        <p style={{fontSize:"10px", textAlign:"left", marginTop:"10px"}}>Google veya Apple kimliğinizle bir sonraki adıma geçmeniz halinde Bireysel <br /> Hesap Sözleşmesi ve Eklerini kabul etmiş sayılırsınız.</p>
                         <p style={{marginTop:"20px"}}>QR kod ile mobil uyulamadan <b style={{color:"#2c7cd1", fontSize:"15px"}}>Giriş yap</b></p>
                     </div>
                 </div>

@@ -78,7 +78,7 @@ export default function Kayit() {
             <button className="apple-button">Apple ile giriş yap</button>
             <p style={{ fontSize: "10px", textAlign: "left", marginTop: "10px" }}>
               Google veya Apple kimliğinizle bir sonraki adıma geçmeniz halinde
-              Bireysel Hesap Sözleşmesi ve Ekleri'ni kabul etmiş sayılırsınız.
+              Bireysel Hesap Sözleşmesi ve Eklerini kabul etmiş sayılırsınız.
             </p>
             <p style={{ marginTop: "20px", fontSize: "14px" }}>
               İşletme sahibi misin? <b style={{ color: "#2c7cd1", fontSize: "15px" }}>Kurumsal hesap aç</b>
