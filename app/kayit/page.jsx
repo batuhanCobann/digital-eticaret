@@ -74,13 +74,8 @@ export default function Kayit() {
             <button className="google-button">Google ile giriş yap</button>
             <br />
             <button className="apple-button">Apple ile giriş yap</button>
-            <p className="description">
-              Google veya Apple kimliğinizle bir sonraki adıma geçmeniz halinde
-              Bireysel Hesap Sözleşmesi ve Eklerini kabul etmiş sayılırsınız.
-            </p>
-            <p className="footer-p">
-              İşletme sahibi misin <b className="footer-b" >Kurumsal hesap aç</b>
-            </p>
+            <p className="description">Google veya Apple kimliğinizle bir sonraki adıma geçmeniz halinde Bireysel Hesap Sözleşmesi ve Eklerini kabul etmiş sayılırsınız.</p>
+            <p className="footer-p">İşletme sahibi misin <b className="footer-b" >Kurumsal hesap aç</b></p>
           </div>
         </div>
       </div>

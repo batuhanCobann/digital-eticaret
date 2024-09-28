@@ -73,3 +73,52 @@ body{
     height: 40px;
     color: #5f6368;
 }
+
+.conteiner-mini{
+    text-align: center;
+}
+
+.user-h2{
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.label{
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+}
+
+.checkbox-p{
+    color: #2c7cd1;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.singup{
+    margin-top: 20px;
+}
+.singup-link{
+    text-decoration: none;
+    color: #2c7cd1;
+}
+.veya{
+    margin-top: 30px;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.description{
+    text-align: left;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.qr-enter{
+    margin-top: 20px;
+}
+.qr-enter-b{
+    color: #2c7cd1;
+    font-size: 15px;
+}
