@@ -69,19 +69,17 @@ export default function Kayit() {
               <br />
               <button type="submit" className="enter-button">Kayıt Ol</button>
             </form>
-            <p style={{ marginTop: "20px" }}>
-              Zaten hesabın var mı? <Link style={{ textDecoration: "none", color: "#2c7cd1" }} href="/giris">Giriş yap</Link>
-            </p>
-            <p style={{ marginTop: "30px", fontWeight: "300", fontSize: "13px" }}>VEYA</p>
+            <p className="login-singup">Zaten hesabın var mı <Link className="login-sinup-link" href="/giris">Giriş yap</Link></p>
+            <p className="veya">VEYA</p>
             <button className="google-button">Google ile giriş yap</button>
             <br />
             <button className="apple-button">Apple ile giriş yap</button>
-            <p style={{ fontSize: "10px", textAlign: "left", marginTop: "10px" }}>
+            <p className="description">
               Google veya Apple kimliğinizle bir sonraki adıma geçmeniz halinde
               Bireysel Hesap Sözleşmesi ve Eklerini kabul etmiş sayılırsınız.
             </p>
-            <p style={{ marginTop: "20px", fontSize: "14px" }}>
-              İşletme sahibi misin? <b style={{ color: "#2c7cd1", fontSize: "15px" }}>Kurumsal hesap aç</b>
+            <p className="footer-p">
+              İşletme sahibi misin <b className="footer-b" >Kurumsal hesap aç</b>
             </p>
           </div>
         </div>

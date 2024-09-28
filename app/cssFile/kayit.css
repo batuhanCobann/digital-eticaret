@@ -77,3 +77,32 @@
     height: 40px;
 
 }
+
+.login-singup{
+    margin-top: 20px;
+}
+
+.login-sinup-link{
+    text-decoration: none;   
+    color: #2c7cd1;
+}
+.veya{
+    margin-top: 30px;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.description{
+    text-align: left;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.footer-p{
+    margin-top: 20px;
+    font-size: 14px;
+}
+.footer-b{
+    color: #2c7cd1;
+    font-size: 15px;
+}
