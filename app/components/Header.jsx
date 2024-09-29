@@ -65,12 +65,7 @@ export default function Header({ user }) {
         <header className="header">
             <div className="header-left">
                 <h2>Gamekeybox.com</h2>
-                <ul>
-                    <li>Şecenek</li>
-                    <li>Şecenek</li>
-                    <li>Şecenek</li>
-                    <li>Şecenek</li>
-                </ul>
+
                 
             </div>
             {user ? (
@@ -128,7 +123,7 @@ export default function Header({ user }) {
                             <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                         </div>
                     </div>
-                    
+
                 </div>
             )}
         </header>

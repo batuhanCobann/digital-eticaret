@@ -303,6 +303,7 @@ import Link from "next/link";
 import { signup } from "./actions"; // signup fonksiyonunu import ediyoruz
 import { useState } from "react";
 import Swal from "sweetalert2"; // SweetAlert2'yi import ediyoruz
+import { redirect } from "next/dist/server/api-utils";
 
 export default function Kayit() {
   const [formData, setFormData] = useState({
@@ -317,11 +318,10 @@ export default function Kayit() {
   
     try {
       await signup(form); // signup fonksiyonunu çağırıyoruz
-      
       // Kayıt başarılı olduğunda SweetAlert çıkar
       Swal.fire({
         title: 'Kayıt Başarılı!',
-        text: 'Hesabınız başarıyla oluşturuldu.',
+        text: 'Hesabınız başarıyla oluşturuldu. E-posta onayı gerekiyor',
         icon: 'success',
         confirmButtonText: 'Tamam'
       });
