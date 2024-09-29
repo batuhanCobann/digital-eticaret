@@ -62,13 +62,15 @@ export default function Header({ user }) {
     
     return (
         <header className="header">
-
-
-
-
             <div className="header-left">
-                <h2>Gamebox.com</h2>
-                <input type="text" placeholder="Kelime ilan no veya mağaza adı ile ara" />
+                <h2>Gamekeybox.com</h2>
+                <ul>
+                    <li>Şecenek</li>
+                    <li>Şecenek</li>
+                    <li>Şecenek</li>
+                    <li>Şecenek</li>
+                </ul>
+                
             </div>
             {user ? (
                 <div className="header-right">
@@ -77,15 +79,15 @@ export default function Header({ user }) {
                         <form action={SingOut}>
                             <button>Çıkış yap</button>
                         </form>
-                        <Link href="/ilan"><button className="new-advert">Ücretsiz İlan Ver</button></Link>
+                        <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                     </div>
                     <div className="header-right-mobile">
-                        <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" />
+                        <image className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" />
                         <div className={`offcanvas ${isOpen ? "open" : ""}`}>
                             <button className="offcanvas-close" onClick={toggleMenu}>
                                 X
                             </button><br />
-                        <   Link href="/ilan"><button className="new-advert">Ücretsiz İlan Ver</button></Link><br />
+                        <   Link href="/ilan"><button className="new-advert">İlan Ver</button></Link><br />
                             <span style={{ color: "white" }}>{user.user_metadata?.display_name}</span>
                             <form action={SingOut}>
                                 <button>Çıkış yap</button>
@@ -98,17 +100,17 @@ export default function Header({ user }) {
                     <div className="header-right-desktop">
                         <Link style={{ textDecoration: "none", color: "white" }} href={"/giris"}><p>Giriş Yap</p></Link>
                         <Link style={{ textDecoration: "none", color: "white" }} href={"/kayit"}><p>Hesap Aç</p></Link>
-                        <Link href="/ilan"><button className="new-advert">Ücretsiz İlan Ver</button></Link>
+                        <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                     </div>
                     <div className="header-right-mobile">
-                        <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" />
+                        <image className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" />
                         <div className={`offcanvas ${isOpen ? "open" : ""}`}>
                             <button className="offcanvas-close" onClick={toggleMenu}>
                                 X
                             </button>
                             <Link style={{ textDecoration: "none", color: "white" }} href={"/giris"}><p>Giriş Yap</p></Link>
                             <Link style={{ textDecoration: "none", color: "white" }} href={"/kayit"}><p>Hesap Aç</p></Link>
-                            <Link href="/ilan"><button className="new-advert">Ücretsiz İlan Ver</button></Link>
+                            <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                         </div>
                     </div>
                 </div>

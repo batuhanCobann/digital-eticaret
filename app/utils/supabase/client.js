@@ -11,7 +11,11 @@
 // utils/supabaseClient.js
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL; // Supabase URL'nizi buraya ekleyin
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY; // Supabase Anon Key'nizi buraya ekleyin
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Supabase URL veya Anon Key eksik!');
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
