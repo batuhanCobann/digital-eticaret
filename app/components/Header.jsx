@@ -52,6 +52,7 @@ import Link from "next/link";
 import { SingOut } from "../login/actions";
 import "@/app/cssFile/header.css";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Header({ user }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +83,14 @@ export default function Header({ user }) {
                         <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                     </div>
                     <div className="header-right-mobile">
-                        <image className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" />
+                        {/* <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" /> */}
+                        <Image
+                            onClick={toggleMenu}
+                            className="offcanvas-toggle"
+                            src="hamburger-menu.svg"
+                            width={20}
+                            height={20}
+                            alt="Picture of the author"/>
                         <div className={`offcanvas ${isOpen ? "open" : ""}`}>
                             <button className="offcanvas-close" onClick={toggleMenu}>
                                 X
@@ -103,7 +111,14 @@ export default function Header({ user }) {
                         <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                     </div>
                     <div className="header-right-mobile">
-                        <image className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" />
+                        {/* <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" /> */}
+                        <Image
+                            onClick={toggleMenu}
+                            className="offcanvas-toggle"
+                            src="hamburger-menu.svg"
+                            width={20}
+                            height={20}
+                            alt="Picture of the author"/>
                         <div className={`offcanvas ${isOpen ? "open" : ""}`}>
                             <button className="offcanvas-close" onClick={toggleMenu}>
                                 X
