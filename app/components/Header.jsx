@@ -128,6 +128,7 @@ export default function Header({ user }) {
                             <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                         </div>
                     </div>
+                    
                 </div>
             )}
         </header>
