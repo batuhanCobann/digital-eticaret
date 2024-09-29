@@ -39,13 +39,14 @@
       padding: 3px 1px;
       border-radius: 5px;
     }
-    ul{
-      list-style: none;
-      display: flex;
-      gap: 10px;
-      color: white;
-      font-size: 13px;
-    }
+  }
+
+  .header-ul{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    color: white;
+    font-size: 13px;
   }
   
 
