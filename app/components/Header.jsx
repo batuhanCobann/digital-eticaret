@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient } from '@/utils/supabase/server';
 import { SingOut } from "../login/actions";
 import { redirect } from "next/navigation";
+import "@/app/cssFile/header.css";
 
 export default async function Header() {
     const supabase = createClient();
@@ -18,7 +19,7 @@ export default async function Header() {
         <>
             <header className="header">
                 <div className="header-left">
-                    <h2>Lisansanahtar.com</h2>
+                    <h2>Gamebox.com</h2>
                     <input type="text" placeholder="Kelime ilan no veya mağaza adı ile ara" />
                 </div>
                 {data?.user ? (

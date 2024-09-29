@@ -28,12 +28,14 @@ body {
   h2{
     background-color: yellow;
     padding: 3px 1px;
+    border-radius: 5px;
   }
   input{
     background-color: #252b39;
     border: none;
     border-radius: 2px;
-    width: 250px;
+    max-width: 250px;
+    width: 100%;
     height: 32px;
     font-size: 12px;
   }
