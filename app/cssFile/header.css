@@ -1,24 +1,118 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header-right-desktop{display: none;}
+
 .header{
-    max-width: 1400px;
-}
-.header-right{
-    display: none;
-}
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #3f475f;
+    padding: 10px;
+  }
 
-
-
-
-
-@media (width >= 850px) {
+  .header-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    p{
+      color: white;
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+  
+  .header-left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 420px;
+    width: 100%;
+    h2{
+      background-color: yellow;
+      padding: 3px 1px;
+      border-radius: 5px;
+    }
+    input{
+      background-color: #252b39;
+      border: none;
+      border-radius: 2px;
+      width: 100%;
+      height: 32px;
+      font-size: 12px;
+    }
+  }
   
 
+  
+  .new-advert{
+    background-color: #489AF1;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+  }
+
+
+
+
+@media (width >= 930px) {
+  .header-right-desktop{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    p{
+      color: white;
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+  .header-right-mobile{display: none;}
 }
 
 @media (width >= 1100px) {
-    .header-right{
-        display: flex;
-    }
 
 
-    
+}
+
+
+.offcanvas {
+  text-align: end;
+  position: fixed;
+  top: 0;
+  right: -250px; /* Başlangıçta görünmez */
+  width: 250px;
+  height: 100%;
+  background-color: #292f42;
+  color: white;
+  transition: right 0.3s ease;
+  padding: 20px;
+  z-index: 1000; /* Diğer içeriklerin üstünde olmasını sağla */
+}
+
+.offcanvas.open {
+  right: 0; /* Menü açıldığında görünür hale getir */
+}
+
+.offcanvas-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.offcanvas-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }

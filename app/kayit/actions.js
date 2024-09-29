@@ -53,7 +53,7 @@
 
 
 // actions.js
-import { supabase } from "@/utils/supabase/client"; // Supabase istemcisini import edin
+import { supabase } from "@/app/utils/supabase/client"; // Supabase istemcisini import edin
 export const signup = async (formData) => {
   const { name, email, password } = Object.fromEntries(formData);
 
