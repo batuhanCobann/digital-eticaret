@@ -27,16 +27,13 @@
 //   );
 // }
 
-import Header from "./components/Header";
-import { createClient } from '@/app/utils/supabase/server';
+
 
 export default async function Home() {
-    const supabase = createClient(); // Supabase istemcisini oluştur
-    const { data, error } = await supabase.auth.getUser(); // Kullanıcı bilgisini al
+
 
     return (
         <>
-            <Header user={data?.user} /> {/* Kullanıcı bilgisini Header'a iletin */}
         </>
     );
 }

@@ -1,6 +1,10 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { createClient } from "./utils/supabase/server";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
 
 // const roboto = Roboto({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -22,10 +26,14 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+
+  const supabase = createClient(); // Supabase istemcisini oluştur
+  const { data, error } = await supabase.auth.getUser(); // Kullanıcı bilgisini al
   return (
     <html lang="en">
       <body className={roboto.className}>
+        <Header   user={data?.user} />
         {children}
       </body>
     </html>

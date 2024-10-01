@@ -67,7 +67,7 @@ export default function Header({ user }) {
                 <h2>Gamekeybox.com</h2>
                 <ul className="header-ul">
                     <li>Lisans Anahtarları</li>
-                    <li>Oyun Dünyası</li>
+                    <li><Link href="/gameWorld">Oyun Dünyası</Link></li>
                 </ul>
                 
             </div>
@@ -76,7 +76,7 @@ export default function Header({ user }) {
                     <div className="header-right-desktop">
                         <span style={{ color: "white" }}>{user.user_metadata?.display_name}</span>
                         <form action={SingOut}>
-                            <button>Çıkış yap</button>
+                            <button className="btn btn-info" >Çıkış yap</button>
                         </form>
                         <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                     </div>

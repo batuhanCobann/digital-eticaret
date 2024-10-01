@@ -9,7 +9,6 @@
 }
 
 .header{
-    max-width: 1200px;
     margin-inline: auto;
     display: flex;
     justify-content: space-between;
@@ -35,7 +34,7 @@
     max-width: 420px;
     width: 100%;
     h2{
-      background-color: yellow;
+      background-color: rgb(25, 255, 52);
       padding: 3px 1px;
       border-radius: 5px;
     }
