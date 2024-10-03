@@ -58,7 +58,7 @@ export default function Basket() {
     const updateQuantity = async (item) => {
         const { id } = item;
         const newQuantity = counts[id] || 0; // Mevcut sayıyı al
-        console.log();
+
         console.log(`ID'si ${id} olan ürünün yeni miktarı:`, newQuantity);
 
         if (newQuantity === 0) {
@@ -151,12 +151,13 @@ export default function Basket() {
                 const cardNumber = document.getElementById('card-number').value;
                 const expiryDate = document.getElementById('expiry-date').value;
                 const securityCode = document.getElementById('security-code').value;
-
+    
                 // Boş olup olmadığını kontrol et
                 if (!firstName || !lastName || !address || !cardNumber || !expiryDate || !securityCode) {
                     Swal.showValidationMessage('Lütfen tüm alanları doldurun.');
+                    return false; // Hata durumunda false döndür
                 }
-
+    
                 return {
                     firstName,
                     lastName,
@@ -167,43 +168,32 @@ export default function Basket() {
                 };
             }
         });
-
+    
         if (formValues) {
             console.log('Sipariş Bilgileri:', formValues);
-
-            // Supabase'den sepeti temizleme işlemi
+            Swal.fire({
+                title: 'Tebrikler!',
+                text: 'Siparişiniz başarıyla oluşturuldu.',
+                icon: 'success',
+                confirmButtonText: 'Tamam',
+            });
+    
+            // Sepeti veritabanından temizle
             const deletePromises = data.map(item => {
                 return supabase
                     .from('basket')
                     .delete()
                     .eq('id', item.id);
             });
-
-            try {
-                await Promise.all(deletePromises); // Tüm silme işlemlerinin tamamlanmasını bekle
-
-                console.log('Sepet başarıyla temizlendi.');
-                Swal.fire({
-                    title: 'Tebrikler!',
-                    text: 'Siparişiniz başarıyla oluşturuldu.',
-                    icon: 'success',
-                    confirmButtonText: 'Tamam',
-                });
-
-                // Sepeti temizle
-                setData([]);
-                setCounts({});
-            } catch (error) {
-                console.error("Sepet temizlenirken bir hata oluştu:", error.message);
-                Swal.fire({
-                    title: 'Hata!',
-                    text: 'Sepet temizlenirken bir hata oluştu.',
-                    icon: 'error',
-                    confirmButtonText: 'Tamam',
-                });
-            }
+    
+            await Promise.all(deletePromises); // Tüm silme işlemlerinin tamamlanmasını bekle
+    
+            // Kullanıcı arayüzünde sepeti temizle
+            setData([]);
+            setCounts({});
         }
     };
+    
 
     if (error) return <div>Hata: {error.message}</div>;
 
