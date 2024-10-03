@@ -5,7 +5,12 @@
 
 .header-right-desktop{display: none;}
 .header-right-mobile{
+  display: flex;
+  gap: 20px;
   width: 60px;
+}
+.sepet-mobile{
+  margin-top: 10px;
 }
 
 .header{
@@ -57,11 +62,17 @@
     color: white;
     cursor: pointer;
   }
-
+  .gameworld-btn{
+    text-decoration: none;
+    color: white;
+  }
 
 
 
 @media (width >= 930px) {
+  .header{
+    padding: 10px 30px;
+  }
   .header-right-desktop{
     display: flex;
     align-items: center;
@@ -76,7 +87,13 @@
 }
 
 @media (width >= 1100px) {
-
+  .header{
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #3f475f;
+    padding: 10px 50px;
+  }
 
 }
 

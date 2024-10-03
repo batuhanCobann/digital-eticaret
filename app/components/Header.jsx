@@ -64,16 +64,27 @@ export default function Header({ user }) {
     return (
         <header className="header">
             <div className="header-left">
-                <h2>Gamekeybox.com</h2>
+                {/* <Image 
+                src="/gamebox.png"
+                width={100}
+                height={30} /> */}
+                <h2>Gamebox</h2>
                 <ul className="header-ul">
                     <li>Lisans Anahtarları</li>
-                    <li><Link href="/gameWorld">Oyun Dünyası</Link></li>
+                    <li><Link className="gameworld-btn" href="/gameWorld">Oyun Dünyası</Link></li>
                 </ul>
                 
             </div>
             {user ? (
                 <div className="header-right">
                     <div className="header-right-desktop">
+                        <Link href="/sepet">
+                            <Image
+                                src="sepet.svg"
+                                width={20}
+                                height={20}
+                                alt="Picture of the author"/>
+                        </Link>
                         <span style={{ color: "white" }}>{user.user_metadata?.display_name}</span>
                         <form action={SingOut}>
                             <button className="btn btn-info" >Çıkış yap</button>
@@ -82,18 +93,33 @@ export default function Header({ user }) {
                     </div>
                     <div className="header-right-mobile">
                         {/* <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" /> */}
-                        <Image
-                            onClick={toggleMenu}
-                            className="offcanvas-toggle"
-                            src="hamburger-menu.svg"
-                            width={20}
-                            height={20}
-                            alt="Picture of the author"/>
+                        <div>
+                            <Image
+                                className="sepet-mobile"
+                                src="sepet.svg"
+                                width={20}
+                                height={20}
+                                alt="Picture of the author"/>
+                        </div>
+                        <div>
+                            <Image
+                                onClick={toggleMenu}
+                                className="offcanvas-toggle"
+                                src="hamburger-menu.svg"
+                                width={20}
+                                height={20}
+                                alt="Picture of the author"/>
+                        </div>
                         <div className={`offcanvas ${isOpen ? "open" : ""}`}>
                             <button className="offcanvas-close" onClick={toggleMenu}>
                                 X
                             </button><br />
-                        <   Link href="/ilan"><button className="new-advert">İlan Ver</button></Link><br />
+                            <Image
+                            src="sepet.svg"
+                            width={20}
+                            height={20}
+                            alt="Picture of the author"/><br/>
+                        <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link><br />
                             <span style={{ color: "white" }}>{user.user_metadata?.display_name}</span>
                             <form action={SingOut}>
                                 <button>Çıkış yap</button>
@@ -104,23 +130,39 @@ export default function Header({ user }) {
             ) : (
                 <div className="header-right">
                     <div className="header-right-desktop">
+                        <Image
+                            src="sepet.svg"
+                            width={20}
+                            height={20}
+                            alt="Picture of the author"/>
                         <Link style={{ textDecoration: "none", color: "white" }} href={"/giris"}><p>Giriş Yap</p></Link>
                         <Link style={{ textDecoration: "none", color: "white" }} href={"/kayit"}><p>Hesap Aç</p></Link>
                         <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
                     </div>
                     <div className="header-right-mobile">
                         {/* <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" /> */}
-                        <Image
-                            onClick={toggleMenu}
-                            className="offcanvas-toggle"
-                            src="hamburger-menu.svg"
-                            width={20}
-                            height={20}
-                            alt="Picture of the author"/>
+                        <div>
+                            <Image
+                                className="sepet-mobile"
+                                src="sepet.svg"
+                                width={20}
+                                height={20}
+                                alt="Picture of the author"/>
+                        </div>
+                        <div>
+                            <Image
+                                onClick={toggleMenu}
+                                className="offcanvas-toggle"
+                                src="hamburger-menu.svg"
+                                width={20}
+                                height={20}
+                                alt="Picture of the author"/>
+                        </div>
                         <div className={`offcanvas ${isOpen ? "open" : ""}`}>
                             <button className="offcanvas-close" onClick={toggleMenu}>
                                 X
                             </button>
+
                             <Link style={{ textDecoration: "none", color: "white" }} href={"/giris"}><p>Giriş Yap</p></Link>
                             <Link style={{ textDecoration: "none", color: "white" }} href={"/kayit"}><p>Hesap Aç</p></Link>
                             <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
