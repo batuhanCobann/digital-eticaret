@@ -94,12 +94,13 @@ export default function Header({ user }) {
                     <div className="header-right-mobile">
                         {/* <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" /> */}
                         <div>
+                        <Link href="/sepet">
                             <Image
-                                className="sepet-mobile"
                                 src="sepet.svg"
                                 width={20}
                                 height={20}
                                 alt="Picture of the author"/>
+                        </Link>
                         </div>
                         <div>
                             <Image
@@ -114,11 +115,13 @@ export default function Header({ user }) {
                             <button className="offcanvas-close" onClick={toggleMenu}>
                                 X
                             </button><br />
+                            <Link href="/sepet">
                             <Image
-                            src="sepet.svg"
-                            width={20}
-                            height={20}
-                            alt="Picture of the author"/><br/>
+                                src="sepet.svg"
+                                width={20}
+                                height={20}
+                                alt="Picture of the author"/>
+                            </Link>
                         <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link><br />
                             <span style={{ color: "white" }}>{user.user_metadata?.display_name}</span>
                             <form action={SingOut}>
@@ -130,11 +133,13 @@ export default function Header({ user }) {
             ) : (
                 <div className="header-right">
                     <div className="header-right-desktop">
-                        <Image
-                            src="sepet.svg"
-                            width={20}
-                            height={20}
-                            alt="Picture of the author"/>
+                        <Link href="/sepet">
+                            <Image
+                                src="sepet.svg"
+                                width={20}
+                                height={20}
+                                alt="Picture of the author"/>
+                        </Link>
                         <Link style={{ textDecoration: "none", color: "white" }} href={"/giris"}><p>Giriş Yap</p></Link>
                         <Link style={{ textDecoration: "none", color: "white" }} href={"/kayit"}><p>Hesap Aç</p></Link>
                         <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
@@ -142,12 +147,13 @@ export default function Header({ user }) {
                     <div className="header-right-mobile">
                         {/* <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" /> */}
                         <div>
-                            <Image
-                                className="sepet-mobile"
+                        <Link href="/sepet">
+                                <Image
                                 src="sepet.svg"
                                 width={20}
                                 height={20}
                                 alt="Picture of the author"/>
+                        </Link>
                         </div>
                         <div>
                             <Image
