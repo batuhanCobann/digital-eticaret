@@ -80,6 +80,7 @@ export default function Header({ user }) {
                     <div className="header-right-desktop">
                         <Link href="/sepet">
                             <Image
+                                className="sepet-icon"
                                 src="sepet.svg"
                                 width={20}
                                 height={20}
@@ -96,6 +97,7 @@ export default function Header({ user }) {
                         <div>
                         <Link href="/sepet">
                             <Image
+                                className="sepet-icon"
                                 src="sepet.svg"
                                 width={20}
                                 height={20}
@@ -116,11 +118,12 @@ export default function Header({ user }) {
                                 X
                             </button><br />
                             <Link href="/sepet">
-                            <Image
-                                src="sepet.svg"
-                                width={20}
-                                height={20}
-                                alt="Picture of the author"/>
+                                <Image
+                                    className="sepet-icon"
+                                    src="sepet.svg"
+                                    width={20}
+                                    height={20}
+                                    alt="Picture of the author"/>
                             </Link>
                         <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link><br />
                             <span style={{ color: "white" }}>{user.user_metadata?.display_name}</span>
@@ -135,6 +138,7 @@ export default function Header({ user }) {
                     <div className="header-right-desktop">
                         <Link href="/sepet">
                             <Image
+                                className="sepet-icon"
                                 src="sepet.svg"
                                 width={20}
                                 height={20}
@@ -149,6 +153,7 @@ export default function Header({ user }) {
                         <div>
                         <Link href="/sepet">
                                 <Image
+                                className="sepet-icon"
                                 src="sepet.svg"
                                 width={20}
                                 height={20}
