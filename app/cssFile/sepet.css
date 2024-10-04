@@ -108,7 +108,6 @@
 @media (width >= 969px) {
 
     .card-container {
-        justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: 16px;

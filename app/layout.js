@@ -2,14 +2,14 @@ import { Lexend } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import { createClient } from "./utils/supabase/server";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
-// const roboto = Roboto({ subsets: ["latin"] });
+
+
 const lexend = Lexend({
-  weight: '400', // Geçerli ağırlıklardan birini seçin
-  subsets: ['latin'], // Kullandığınız alt kümeleri belirtin
+  weight: '400', 
+  subsets: ['latin'], 
 });
 
 export const metadata = {
@@ -28,8 +28,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 
-  const supabase = createClient(); // Supabase istemcisini oluştur
-  const { data, error } = await supabase.auth.getUser(); // Kullanıcı bilgisini al
+  const supabase = createClient(); 
+  const { data, error } = await supabase.auth.getUser(); 
   return (
     <html lang="en">
       <body className={lexend.className}>

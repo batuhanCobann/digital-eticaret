@@ -1,7 +1,6 @@
 import "@/app/cssFile/login.css"
 import Link from "next/link"
 import { login } from "./actions"
-import Swal from 'sweetalert2'
 
 export default function Giris({ searchParams }){
     return(
