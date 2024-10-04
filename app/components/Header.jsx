@@ -70,7 +70,6 @@ export default function Header({ user }) {
                 height={30} /> */}
                 <h2>Gamebox</h2>
                 <ul className="header-ul">
-                    <li>Lisans Anahtarları</li>
                     <li><Link className="gameworld-btn" href="/gameWorld">Oyun Dünyası</Link></li>
                 </ul>
                 

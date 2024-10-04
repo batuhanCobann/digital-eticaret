@@ -70,26 +70,32 @@
     padding: 15px 10px;
     background-color: rgb(29, 28, 28);
 }
+.cards{
+    width: 100%;
+
+}
+.img-prc-div{
+    display: flex;
+    justify-content: space-between;
+}
 
 .card-img-dsc{
     display: flex;
     gap: 30px;
 }
-.card-prc-stc-btn{
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
+
 .basket-btn{
+    display: none;
+}
+.basket-btn-2{
+    width: 100%;
     background: none;
     border: none;
     background-color: rgb(55, 100, 49);
-    width: 100px;
     height: 40px;
     cursor: pointer;
     color:white;
     border-radius: 10px;
-
 }
 
 .card-container{
@@ -111,6 +117,25 @@
     .main-container{
         display: flex;
         gap: 20px;
+    }
+    .card-prc-stc-btn{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    .basket-btn{
+        display: block;
+        background: none;
+        border: none;
+        background-color: rgb(55, 100, 49);
+        width: 100px;
+        height: 40px;
+        cursor: pointer;
+        color:white;
+        border-radius: 10px;
+    }
+    .basket-btn-2{
+        width: 100%;display: none;
     }
   
   }

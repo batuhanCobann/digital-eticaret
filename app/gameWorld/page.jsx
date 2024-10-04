@@ -1,4 +1,3 @@
-
 "use client"; // Bileşeni client-side çalışacak şekilde ayarlıyoruz
 
 import { supabase } from "../utils/supabase/client";
@@ -238,39 +237,43 @@ export default function GameWorld() {
         <div className="card-container">
           {data.map((game) => (
             <div className="card" key={game.id}>
+              <div className="cards">
+                <div className="img-prc-div">
+                  <div className="card-img-dsc">
+                    <div className="card-img-box">
+                      <Image
+                        src="/logo.svg"
+                        width={50}
+                        height={50}
+                        alt="Logo"
+                      />
+                    </div>
+                    <div className="card-name-prd-dsc">
+                      <p>{game.game_name}</p>
+                      <p>{game.product}</p>
+                      <p>{game.description}</p>
+                    </div>
+                  </div>
 
-              <div className="card-img-dsc">
-                <div className="card-img-box">
-                  <Image
-                    src="/logo.svg"
-                    width={50}
-                    height={50}
-                    alt="Logo"
-                  />
+
+                  <div className="card-prc-stc-btn">
+                    <div className="card-stc-prc">
+                      <p>{game.stock} stok</p>
+                      <p>{game.price} TL</p>
+                    </div>
+                    <div className="card-adet-btns">
+                      <p>Adet: {counts[game.id] || 0}</p>
+                      <button onClick={() => increment(game.id)}>+</button>
+                      <button onClick={() => decrement(game.id)}>-</button>
+                    </div>
+                    <div className="add-basket-btn-box">
+                      <button className="basket-btn" onClick={ () => addToBasket(game)}>Sepete Ekle</button>
+                    </div>
+                  </div>
+
                 </div>
-                <div className="card-name-prd-dsc">
-                  <p>{game.game_name}</p>
-                  <p>{game.product}</p>
-                  <p>{game.description}</p>
-                </div>
+                <button className="basket-btn-2" onClick={ () => addToBasket(game)}>Sepete Ekle</button>
               </div>
-
-
-              <div className="card-prc-stc-btn">
-                <div className="card-stc-prc">
-                  <p>{game.stock} adet</p>
-                  <p>Fiyat: {game.price} TL</p>
-                </div>
-                <div className="card-adet-btns">
-                  <p>Adet: {counts[game.id] || 0}</p>
-                  <button onClick={() => increment(game.id)}>+</button>
-                  <button onClick={() => decrement(game.id)}>-</button>
-                </div>
-                <div className="add-basket-btn-box">
-                  <button className="basket-btn" onClick={ () => addToBasket(game)}>Sepete Ekle</button>
-                </div>
-              </div>
-
             </div>
           ))}
         </div>
