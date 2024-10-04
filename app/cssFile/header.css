@@ -10,15 +10,22 @@
   width: 60px;
 }
 .sepet-mobile{
-  margin-top: 10px;
+  margin-top: 0px;
+}
+.exit-btn{
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(245, 65, 65);
 }
 
 .header{
     margin-inline: auto;
     display: flex;
     justify-content: space-between;
-    background-color: #3f475f;
-    padding: 10px;
+    background-color: rgb(29, 28, 28);
+    padding: 20px 30px;
+    
   }
 
   .header-right{
@@ -57,8 +64,9 @@
   
   .new-advert{
     background-color: #489AF1;
+    border-radius: 5px;
     border: none;
-    padding: 8px 15px;
+    padding: 5px 15px;
     color: white;
     cursor: pointer;
   }
@@ -74,7 +82,8 @@
 
 @media (width >= 930px) {
   .header{
-    padding: 10px 30px;
+    padding: 30px 30px;
+
   }
   .header-right-desktop{
     display: flex;
@@ -94,8 +103,8 @@
     margin-inline: auto;
     display: flex;
     justify-content: space-between;
-    background-color: #3f475f;
-    padding: 10px 50px;
+    background-color: rgb(29, 28, 28);
+    padding: 30px 30px;
   }
 
 }
@@ -108,7 +117,7 @@
   right: -250px; /* Başlangıçta görünmez */
   width: 250px;
   height: 100%;
-  background-color: #292f42;
+  background-color: rgb(21, 20, 20);
   color: white;
   transition: right 0.3s ease;
   padding: 20px;
@@ -121,7 +130,7 @@
 
 .offcanvas-toggle {
   position: absolute;
-  top: 20px;
+  top: 27px;
   color: white;
   border: none;
   border-radius: 5px;
@@ -136,3 +145,4 @@
   cursor: pointer;
   margin-bottom: 20px;
 }
+

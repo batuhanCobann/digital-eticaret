@@ -1,19 +1,63 @@
+
+.main-container{
+    padding: 30px;
+    background-color: rgb(23, 21, 21);
+    color: #CCCCCC;
+}
+.right-container{
+    max-width: 1500px;
+    width: 100%;
+}
+
 .left-container{
     display: grid;
     gap: 30px;
+    height:100%;
 }
 
 .features{
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(29, 28, 28);
+}
+.features-head{
+    border: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     padding: 20px;
-    border: 1px solid black;
-    border-radius: 10px;
 }
 
+.features-box{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.help-form{
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: rgb(29, 28, 28);
+
+    p{
+        margin-top: 10px;
+    }
+}
 
 .left-bottom-container{
     padding: 20px;
-    border: 1px solid black;
+    border: none;
+
     border-radius: 10px;
+}
+.card-container{
+    border: none;
+    background-color: rgb(23, 25, 23);
+    padding: 30px 20px; 
+    border-radius: 10px;
+
 }
 
 .card{
@@ -21,8 +65,10 @@
     gap: 50px;
     width: 100%;
     justify-content: space-between;
-    border: 1px solid black;
+    border: none;
     border-radius: 10px;
+    padding: 15px 10px;
+    background-color: rgb(29, 28, 28);
 }
 
 .card-img-dsc{
@@ -49,6 +95,10 @@
 .card-container{
     display: grid;
     gap: 20px;
+}
+
+.valorant-img{
+    border-radius: 15px;
 }
 
 

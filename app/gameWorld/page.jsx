@@ -194,50 +194,83 @@ export default function GameWorld() {
   return (
     <div className="main-container">
       <div className="left-container">
-        <Image
-          src="/valorant.jpg"
-          width={299}
-          height={400}
-          alt="Picture of the author"
-        />
-        <div className="features">
-          <h3>Özellikleri</h3>
-          <p>Bölgeler</p>
-          <p>Platform</p>
-          <p>Teslimat</p>
-          <p>Teslimat Türü</p>
-        </div>
+          <div className="left-img-box">
+            <Image
+            className="valorant-img"
+            src="/valorant.jpg"
+            width={299}
+            height={400}
+            alt="Picture of the author"
+          />
+          </div>
+
+          <div className="features">
+            <div className="features-head">
+              <h3>Özellikleri</h3>
+            </div>
+            <div className="features-box">
+              <p>Bölgeler</p>
+              <p>TR Global</p>
+            </div>
+            <div className="features-box">
+              <p>Platform</p>
+              <p>App/Play Store</p>
+            </div>
+            <div className="features-box">
+              <p>Teslimat</p>
+              <p>7/24</p>
+            </div>
+            <div className="features-box">
+            <p>Teslimat Türü</p>
+            <p>E-pin</p>
+            </div>
+          </div>
+          <div className="help-form">
+            <p>Sıkça Sorulan Sorular</p>
+            <p>Oyunlar Hakkında</p>
+            <p>Nasıl Alırım</p>
+            <p>Satın Almalar Hakkında</p>
+          </div>
       </div>
+
+
       <div className="right-container">
-        <h1>Oyun Listesi</h1>
         <div className="card-container">
           {data.map((game) => (
             <div className="card" key={game.id}>
+
               <div className="card-img-dsc">
-                <Image
-                  src="/logo.svg"
-                  width={50}
-                  height={50}
-                  alt="Logo"
-                />
-                <div>
+                <div className="card-img-box">
+                  <Image
+                    src="/logo.svg"
+                    width={50}
+                    height={50}
+                    alt="Logo"
+                  />
+                </div>
+                <div className="card-name-prd-dsc">
                   <p>{game.game_name}</p>
                   <p>{game.product}</p>
                   <p>{game.description}</p>
                 </div>
               </div>
+
+
               <div className="card-prc-stc-btn">
-                <div>
+                <div className="card-stc-prc">
                   <p>{game.stock} adet</p>
                   <p>Fiyat: {game.price} TL</p>
                 </div>
-                <div>
+                <div className="card-adet-btns">
                   <p>Adet: {counts[game.id] || 0}</p>
                   <button onClick={() => increment(game.id)}>+</button>
                   <button onClick={() => decrement(game.id)}>-</button>
                 </div>
-                <button className="basket-btn" onClick={() => addToBasket(game)}>Sepete Ekle</button>
+                <div className="add-basket-btn-box">
+                  <button className="basket-btn" onClick={ () => addToBasket(game)}>Sepete Ekle</button>
+                </div>
               </div>
+
             </div>
           ))}
         </div>

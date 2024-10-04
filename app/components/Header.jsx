@@ -88,9 +88,9 @@ export default function Header({ user }) {
                         </Link>
                         <span style={{ color: "white" }}>{user.user_metadata?.display_name}</span>
                         <form action={SingOut}>
-                            <button className="btn btn-info" >Çıkış yap</button>
+                            <button className="exit-btn" >Çıkış yap</button>
                         </form>
-                        <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
+                        {/* <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link> */}
                     </div>
                     <div className="header-right-mobile">
                         {/* <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" /> */}
@@ -117,18 +117,10 @@ export default function Header({ user }) {
                             <button className="offcanvas-close" onClick={toggleMenu}>
                                 X
                             </button><br />
-                            <Link href="/sepet">
-                                <Image
-                                    className="sepet-icon"
-                                    src="sepet.svg"
-                                    width={20}
-                                    height={20}
-                                    alt="Picture of the author"/>
-                            </Link>
-                        <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link><br />
+                        {/* <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link><br /> */}
                             <span style={{ color: "white" }}>{user.user_metadata?.display_name}</span>
                             <form action={SingOut}>
-                                <button>Çıkış yap</button>
+                                <button className="exit-btn">Çıkış yap</button>
                             </form><br />
                         </div>
                     </div>
@@ -146,7 +138,7 @@ export default function Header({ user }) {
                         </Link>
                         <Link style={{ textDecoration: "none", color: "white" }} href={"/giris"}><p>Giriş Yap</p></Link>
                         <Link style={{ textDecoration: "none", color: "white" }} href={"/kayit"}><p>Hesap Aç</p></Link>
-                        <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
+                        {/* <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link> */}
                     </div>
                     <div className="header-right-mobile">
                         {/* <img className="offcanvas-toggle" onClick={toggleMenu} src="hamburger-menu.svg" alt="" /> */}
@@ -176,7 +168,7 @@ export default function Header({ user }) {
 
                             <Link style={{ textDecoration: "none", color: "white" }} href={"/giris"}><p>Giriş Yap</p></Link>
                             <Link style={{ textDecoration: "none", color: "white" }} href={"/kayit"}><p>Hesap Aç</p></Link>
-                            <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link>
+                            {/* <Link href="/ilan"><button className="new-advert">İlan Ver</button></Link> */}
                         </div>
                     </div>
                     

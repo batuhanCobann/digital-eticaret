@@ -1,4 +1,4 @@
-import { Roboto } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import { createClient } from "./utils/supabase/server";
@@ -7,7 +7,7 @@ import { createClient } from "./utils/supabase/server";
 
 
 // const roboto = Roboto({ subsets: ["latin"] });
-const roboto = Roboto({
+const lexend = Lexend({
   weight: '400', // Geçerli ağırlıklardan birini seçin
   subsets: ['latin'], // Kullandığınız alt kümeleri belirtin
 });
@@ -32,7 +32,7 @@ export default async function RootLayout({ children }) {
   const { data, error } = await supabase.auth.getUser(); // Kullanıcı bilgisini al
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={lexend.className}>
         <Header   user={data?.user} />
         {children}
       </body>
