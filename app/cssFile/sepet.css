@@ -79,9 +79,12 @@
 }
 
 
-#first-name{
-    width: 400px;
+.swal2-input{
+    max-width: 400px;
+    width: 100%;
 }
+
+
 
 
 .update-btn{

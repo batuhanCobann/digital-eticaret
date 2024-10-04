@@ -1,16 +1,22 @@
 import Image from "next/image";
-
+import "./globals.css";
+import Link from "next/link";
 export default function Home() {
 
     
     return (
-        <div>
+    <div className="div-container">
+        <Link href="/gameWorld" className="picture">
+            {Array.from({ length: 32 }, (_, i) => (
                 <Image
-                    src="/resim.webp"
-                    width={299}
-                    height={400}
-                    alt="Logo"
-                  />
-        </div>
+                key={i}
+                src={`/resim-${i + 1}.webp`}
+                width={299}
+                height={400}
+                alt={`Logo ${i + 1}`}
+                />
+            ))}
+        </Link>
+    </div>
     );
 }
