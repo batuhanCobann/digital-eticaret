@@ -28,6 +28,18 @@
     
   }
 
+  .ansayfa-btn{
+    text-decoration: none;
+    padding: 3px 1px;
+    border-radius: 5px;
+    color: #CCCCCC;
+    background: none;
+    border: none;
+  }
+  .ansayfa-btn:hover{
+    color: white;
+  }
+
   .header-right{
     display: flex;
     align-items: center;
@@ -44,12 +56,8 @@
     align-items: center;
     max-width: 420px;
     width: 100%;
-    h2{
-      background-color: rgb(25, 255, 52);
-      padding: 3px 1px;
-      border-radius: 5px;
-    }
   }
+
 
   .header-ul{
     list-style: none;

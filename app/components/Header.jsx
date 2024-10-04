@@ -68,7 +68,7 @@ export default function Header({ user }) {
                 src="/gamebox.png"
                 width={100}
                 height={30} /> */}
-                <h2>Gamebox</h2>
+                <Link className="ansayfa-btn" href="/"><h2>Gamebox</h2></Link>
                 <ul className="header-ul">
                     <li><Link className="gameworld-btn" href="/gameWorld">Oyun Dünyası</Link></li>
                 </ul>
