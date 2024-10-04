@@ -206,7 +206,6 @@
 
 
 
-
 import { supabase } from "@/app/utils/supabase/client"; // Supabase istemcisini import edin
 
 export const signup = async (formData) => {
@@ -237,3 +236,13 @@ export const signup = async (formData) => {
     console.log("Kayıt başarılı, ancak e-posta doğrulaması gerekiyor.");
   }
 };
+
+
+
+
+
+
+
+
+
+
