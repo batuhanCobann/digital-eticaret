@@ -1,0 +1,48 @@
+.orders-main{
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+    color: #CCCCCC;
+    padding: 30px;
+}
+
+
+.orders-container{
+    border-radius: 10px;
+    background-color: rgb(27, 27, 27);
+    padding: 30px;
+
+}
+
+.order-item{
+    background-color: rgb(35, 35, 35);
+    margin: 20px 0px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.product-orders{
+    margin-top: 100px;
+}
+
+.orders{
+    padding: 10px;
+}
+
+.delete-history-btn{
+    background-color: rgb(190, 190, 1);
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.continue{
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(190, 190, 1);
+    border: none;
+    border-radius: 10px;
+    padding: 10px; 
+}

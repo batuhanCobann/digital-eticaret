@@ -64,6 +64,15 @@
     }
 }
 
+.orders-btn{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(190, 190, 1);
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
 
 
 .card h3 {
