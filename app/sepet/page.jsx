@@ -6,6 +6,8 @@ import { supabase } from "../utils/supabase/client";
 import Swal from 'sweetalert2'; 
 import "../cssFile/sepet.css";
 import Image from "next/image";
+import { processOrder } from './actions';
+
 
 export default function Basket() {
     const [data, setData] = useState([]);
@@ -138,62 +140,84 @@ export default function Basket() {
         return totalPrice;
     };
 
-    const confirmOrder = async () => {
-        const { value: formValues } = await Swal.fire({
-            title: 'Sipariş Bilgileri',
-            html: `
-                <input id="first-name" class="swal2-input" placeholder="Ad" />
-                <input id="last-name" class="swal2-input" placeholder="Soyad" />
-                <input id="address" class="swal2-input" placeholder="Adres" />
-                <input id="card-number" class="swal2-input" placeholder="Kart Numarası" />
-                <input id="expiry-date" class="swal2-input" placeholder="Son Kullanma Tarihi" />
-                <input id="security-code" class="swal2-input" placeholder="Güvenlik Kodu" />
-            `,
-            focusConfirm: false,
-            preConfirm: () => {
-                const firstName = document.getElementById('first-name').value;
-                const lastName = document.getElementById('last-name').value;
-                const address = document.getElementById('address').value;
-                const cardNumber = document.getElementById('card-number').value;
-                const expiryDate = document.getElementById('expiry-date').value;
-                const securityCode = document.getElementById('security-code').value;
-    
-                if (!firstName || !lastName || !address || !cardNumber || !expiryDate || !securityCode) {
-                    Swal.showValidationMessage('Lütfen tüm alanları doldurun.');
-                    return false; 
-                }
-    
-                return {
-                    firstName,
-                    lastName,
-                    address,
-                    cardNumber,
-                    expiryDate,
-                    securityCode,
-                };
-            }
+// Basket.js
+
+
+const confirmOrder = async () => {
+    if (data.length === 0) { // Sepet boşsa
+        Swal.fire({
+            title: 'Sepet Boş!',
+            text: 'Sepetinizde ürün bulunmamaktadır.',
+            icon: 'warning',
+            confirmButtonText: 'Tamam',
         });
-    
-        if (formValues) {
-            console.log('Sipariş Bilgileri:', formValues);
-            Swal.fire({
-                title: 'Tebrikler!',
-                text: 'Siparişiniz başarıyla oluşturuldu.',
-                icon: 'success',
-                confirmButtonText: 'Tamam',
-            });
-            const deletePromises = data.map(item => {
-                return supabase
-                    .from('basket')
-                    .delete()
-                    .eq('id', item.id);
-            });
-            await Promise.all(deletePromises); 
-            setData([]);
-            setCounts({});
+        return; // Sepet boşsa işlemi durdur
+    }
+
+    const { value: formValues } = await Swal.fire({
+        title: 'Sipariş Bilgileri',
+        html: `
+            <input id="first-name" class="swal2-input" placeholder="Ad" />
+            <input id="last-name" class="swal2-input" placeholder="Soyad" />
+            <input id="address" class="swal2-input" placeholder="Adres" />
+            <input id="card-number" class="swal2-input" placeholder="Kart Numarası" />
+            <input id="expiry-date" class="swal2-input" placeholder="Son Kullanma Tarihi" />
+            <input id="security-code" class="swal2-input" placeholder="Güvenlik Kodu" />
+        `,
+        focusConfirm: false,
+        preConfirm: () => {
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const address = document.getElementById('address').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const expiryDate = document.getElementById('expiry-date').value;
+            const securityCode = document.getElementById('security-code').value;
+
+            if (!firstName || !lastName || !address || !cardNumber || !expiryDate || !securityCode) {
+                Swal.showValidationMessage('Lütfen tüm alanları doldurun.');
+                return false;
+            }
+
+            return {
+                firstName,
+                lastName,
+                address,
+                cardNumber,
+                expiryDate,
+                securityCode,
+            };
         }
-    };
-    
+    });
+
+    if (formValues) {
+        // Sipariş bilgilerini actions.js'e gönder
+        const orderInfo = processOrder(formValues);
+
+        // Ekrana bilgileri göster
+        Swal.fire({
+            title: 'Tebrikler Siparişiniz Başarıyla Oluşturuldu!',
+            html: `
+                <p><strong>Ad:</strong> ${formValues.firstName}</p>
+                <p><strong>Soyad:</strong> ${formValues.lastName}</p>
+                <p><strong>Adres:</strong> ${formValues.address}</p>
+            `,
+            icon: 'success',
+            confirmButtonText: 'Tamam',
+        });
+
+        // Sepeti temizleme işlemi
+        const deletePromises = data.map(item => {
+            return supabase
+                .from('basket')
+                .delete()
+                .eq('id', item.id);
+        });
+        await Promise.all(deletePromises);
+        setData([]);
+        setCounts({});
+    }
+};
+
 
     if (error) return <div>Hata: {error.message}</div>;
 
